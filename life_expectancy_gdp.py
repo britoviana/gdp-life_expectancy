@@ -3,6 +3,11 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 
-all_data = pd.read_csv('all_data.csv')
+data = pd.read_csv('all_data.csv')
 
-print(all_data.head())
+data.rename(columns={'Country': 'country',
+                     'Year': 'year',
+                     'Life expectancy at birth (years)': 'life_expectancy',
+                     'GDP': 'gdp'}, inplace=True)
+
+print(data.head())
